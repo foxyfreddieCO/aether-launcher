@@ -53,17 +53,11 @@ jobs:
         with:
           arch: x64
 
-      - name: Add Qt6 Binaries to PATH
-        shell: pwsh
-        run: |
-          "$env:Qt6_DIR\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
-
       - name: Configure CMake (Ninja + MSVC)
         shell: pwsh
         run: |
           cmake -B build -G Ninja `
             -DCMAKE_BUILD_TYPE=Release `
-            -DCMAKE_PREFIX_PATH="$env:Qt6_DIR" `
             -DAETHER_VERSION="${{ steps.ver.outputs.version }}" `
             -DAETHER_BUILD_TESTS=ON
 
@@ -81,7 +75,7 @@ jobs:
           New-Item -ItemType Directory -Force -Path dist/AetherLauncher | Out-Null
           Copy-Item build/AetherLauncher.exe dist/AetherLauncher/
           Copy-Item build/AetherUpdater.exe dist/AetherLauncher/
-          & "$env:Qt6_DIR/bin/windeployqt.exe" `
+          windeployqt.exe `
             --release `
             --qmldir src/ui/qml `
             dist/AetherLauncher/AetherLauncher.exe
