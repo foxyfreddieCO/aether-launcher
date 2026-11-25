@@ -6,6 +6,8 @@
 #define WIN32_LEAN_AND_MEAN
 #endif
 #include <windows.h>
+#include <initguid.h>
+#include <mmreg.h>
 #include <shellapi.h>
 #include <dwmapi.h>
 #include <mmdeviceapi.h>

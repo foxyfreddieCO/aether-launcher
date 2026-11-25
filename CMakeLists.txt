@@ -145,12 +145,13 @@ set_target_properties(AetherLauncher PROPERTIES
 )
 
 # Standalone Safe Updater Binary (placed beside AetherLauncher)
-add_executable(AetherUpdater
+qt_add_executable(AetherUpdater
     src/updater/updater_main.cpp
 )
 target_link_libraries(AetherUpdater PRIVATE Qt6::Core)
 set_target_properties(AetherUpdater PROPERTIES
     WIN32_EXECUTABLE TRUE
+    MACOSX_BUNDLE FALSE
 )
 
 # Automated Unit Test Suite
