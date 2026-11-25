@@ -1,0 +1,13 @@
+build/
+build-*/
+dist/
+dist-*/
+.DS_Store
+*.user
+*.suo
+*.log
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+CMakeUserPresets.json
