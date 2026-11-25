@@ -19,7 +19,6 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS
     Qml
     Quick
     QuickControls2
-    QuickEffects
     Multimedia
     Sql
     Network
@@ -138,7 +137,6 @@ target_link_libraries(AetherLauncher PRIVATE
     Qt6::Qml
     Qt6::Quick
     Qt6::QuickControls2
-    Qt6::QuickEffects
 )
 
 set_target_properties(AetherLauncher PROPERTIES
